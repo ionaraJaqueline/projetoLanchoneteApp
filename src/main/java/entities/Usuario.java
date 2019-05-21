@@ -1,22 +1,57 @@
 package entities;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Usuario implements Identificavel {
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+@Table(name="TB_USUARIO")
+public class Usuario implements Serializable, Identificavel{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@Column(name="ID")
 	private Integer id;
-
+	
+	@Column(name="NOME")
 	private String nome;
-
+	
+	@Column(name="SOBRE_NOME")
 	private String sobreNome;
-
+	
+	@Temporal(TemporalType.DATE)
+	@Column(name="DATA_ANIVERSARIO")
 	private Date dataDeAniversario;
-
+	
+	@Column(name="GRUPO")
 	private Group group;
-
+	
+	@Column(name="LOGIN")
 	private String login;
-
+	@Column(name="PASSWORD")
 	private String password;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	private Contato contato;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	private Endereco endereco;
 
 	public Usuario() {
 
@@ -157,5 +192,21 @@ public class Usuario implements Identificavel {
 		clone.setLogin(login);
 		clone.setPassword(password);
 		return clone;
+	}
+
+	public Contato getContato() {
+		return contato;
+	}
+
+	public void setContato(Contato contato) {
+		this.contato = contato;
+	}
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 }

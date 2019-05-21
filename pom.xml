@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.edu.ifpb.projeto.dac</groupId>
-	<artifactId>lanchoneteApp</artifactId>
+	<artifactId>lanchonete</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<properties>
@@ -27,11 +27,20 @@
 			<version>3.2</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
-		<!-- https://www.primefaces.org/ - PrimeFaces | Ultimate UI Framework for Java EE -->
+		<!-- https://www.primefaces.org/ - PrimeFaces | Ultimate UI Framework for 
+			Java EE -->
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
 			<version>7.0</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+			<version>1.0.2.Final</version>
+		</dependency>
+
 	</dependencies>
 </project>

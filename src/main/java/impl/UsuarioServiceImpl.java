@@ -7,10 +7,9 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 import java.util.List;
 
-
-import dao.PersistenciaDacException;
+import dao.ImplementeUsuarioDao;
+import dao.PersistenciaDacaException;
 import dao.UsuarioDAO;
-import daoImplMemory.UsuarioInMemoryDAO;
 import entities.Usuario;
 import filters.UsuarioFilter;
 import service.ServiceDacException;
@@ -24,7 +23,7 @@ public class UsuarioServiceImpl implements Serializable, UsuarioService {
 	 */
 	private static final long serialVersionUID = -7803325791425670859L;
 	
-	private UsuarioDAO usuarioDAO = new UsuarioInMemoryDAO();
+	private UsuarioDAO usuarioDAO = new ImplementeUsuarioDao();
 	
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.mt.dac.services.UserService#save(br.edu.ifpb.mt.dac.entities.User)
@@ -37,7 +36,7 @@ public class UsuarioServiceImpl implements Serializable, UsuarioService {
 			//usuario.limparCamposEspecificos();
 			calcularHashDaSenha(usuario);
 			usuarioDAO.save(usuario);
-		} catch (PersistenciaDacException e) {
+		} catch (PersistenciaDacaException e) {
 			throw new ServiceDacException(e.getMessage(), e);
 		}
 	}
@@ -56,7 +55,7 @@ public class UsuarioServiceImpl implements Serializable, UsuarioService {
 				calcularHashDaSenha(usuario);
 			}
 			return (Usuario) usuarioDAO.update(usuario);
-		} catch (PersistenciaDacException e) {
+		} catch (PersistenciaDacaException e) {
 			throw new ServiceDacException(e.getMessage(), e);
 		}
 	}
@@ -68,7 +67,7 @@ public class UsuarioServiceImpl implements Serializable, UsuarioService {
 	public void delete(Usuario usuario) throws ServiceDacException {
 		try {
 			usuarioDAO.delete(usuario);
-		} catch (PersistenciaDacException e) {
+		} catch (PersistenciaDacaException e) {
 			throw new ServiceDacException(e.getMessage(), e);
 		}
 	}
@@ -80,7 +79,7 @@ public class UsuarioServiceImpl implements Serializable, UsuarioService {
 	public Usuario getByID(int usuarioId) throws ServiceDacException {
 		try {
 			return usuarioDAO.getByID(usuarioId);
-		} catch (PersistenciaDacException e) {
+		} catch (PersistenciaDacaException e) {
 			throw new ServiceDacException(e.getMessage(), e);
 		}
 	}
@@ -92,7 +91,7 @@ public class UsuarioServiceImpl implements Serializable, UsuarioService {
 	public List<Usuario> getAll() throws ServiceDacException {
 		try {
 			return usuarioDAO.getAll();
-		} catch (PersistenciaDacException e) {
+		} catch (PersistenciaDacaException e) {
 			throw new ServiceDacException(e.getMessage(), e);
 		}
 	}
@@ -105,7 +104,7 @@ public class UsuarioServiceImpl implements Serializable, UsuarioService {
 		try {
 			filter.validate();
 			return usuarioDAO.findBy(filter);
-		} catch (PersistenciaDacException e) {
+		} catch (PersistenciaDacaException e) {
 			throw new ServiceDacException(e.getMessage(), e);
 		}
 	}
@@ -125,7 +124,7 @@ public class UsuarioServiceImpl implements Serializable, UsuarioService {
 		String senhaHash = null;
 		try {
 			senhaHash = usuarioDAO.getByID(usuario.getId()).getPassword();
-		} catch (PersistenciaDacException e) {
+		} catch (PersistenciaDacaException e) {
 			throw new ServiceDacException(e.getMessage(), e);
 		}
 		

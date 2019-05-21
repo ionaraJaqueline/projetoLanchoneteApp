@@ -1,9 +1,24 @@
 package entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name="Sobre_Mesa")
 public class SobreMesa {
-	private String nome;
-	private Float preco;
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer codigo;
+	@Column(name="Nome")
+	private String nome;
+	@Column(name="Preço")
+	private Float preco;
+	@Column(name="Descrição")
+	private String descricao;
 
 	public SobreMesa() {
 	}
@@ -37,6 +52,14 @@ public class SobreMesa {
 
 	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 }

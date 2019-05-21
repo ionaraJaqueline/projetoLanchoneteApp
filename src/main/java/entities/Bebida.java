@@ -1,13 +1,27 @@
 package entities;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Bebida {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long codigo;
+	
+	@Column(name="Nome")
 	private String nome;
+	
+	@Column(name="Preco")
 	private Float preco;
-	private Integer codigo;
 	
 	public Bebida() {}
 	
-	public Bebida(String nome, Float preco, Integer code){
+	public Bebida(String nome, Float preco, Long code){
 		
 		this.nome = nome;
 		this.preco = preco;
@@ -30,11 +44,11 @@ public class Bebida {
 		this.preco = preco;
 	}
 
-	public Integer getCodigo() {
+	public Long getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(Integer codigo) {
+	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
 

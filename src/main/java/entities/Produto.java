@@ -1,13 +1,32 @@
 package entities;
 
-import java.sql.Date;
+import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+@Entity
 public class Produto {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long codigo;
+	@Column(name="Nome")
 	private String nome;
-	private String dataDeValidade;
+	@Temporal(TemporalType.DATE)
+	@Column(name="Data_Validade")
+	private Date dataDeValidade;
+	@Column(name="Quantidade")
 	private Integer quantidade;
+	@Temporal(TemporalType.DATE)
+	@Column(name="Data_Entrada")
 	private Date dataEntrada;
+	@Temporal(TemporalType.DATE)
+	@Column(name="Data_Saida")
 	private Date dataSaida;
 
 	public Produto() {
@@ -21,11 +40,11 @@ public class Produto {
 		this.nome = nome;
 	}
 
-	public String getDataDeValidade() {
+	public Date getDataDeValidade() {
 		return dataDeValidade;
 	}
 
-	public void setDataDeValidade(String dataDeValidade) {
+	public void setDataDeValidade(Date dataDeValidade) {
 		this.dataDeValidade = dataDeValidade;
 	}
 
@@ -51,6 +70,14 @@ public class Produto {
 
 	public void setDataSaida(Date dataSaida) {
 		this.dataSaida = dataSaida;
+	}
+
+	public Long getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(Long codigo) {
+		this.codigo = codigo;
 	}
 
 }

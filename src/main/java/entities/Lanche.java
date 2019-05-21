@@ -1,16 +1,28 @@
 package entities;
 
-public class Lanche {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+public class Lanche {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long codigo;
+	@Column(name="Nome")
 	private String nome;
+	@Column(name="Descrição")
 	private String descricao;
-	private Integer codigo;
+	@Column(name="Preço")
 	private Float preco;
 
 	public Lanche() {
 	}
 
-	public Lanche(String nome, String descricao, Integer code, Float preco) {
+	public Lanche(String nome, String descricao, Long code, Float preco) {
 
 		this.nome = nome;
 		this.descricao = descricao;
@@ -34,11 +46,11 @@ public class Lanche {
 		this.descricao = descricao;
 	}
 
-	public Integer getCodigo() {
+	public Long getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(Integer codigo) {
+	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
 

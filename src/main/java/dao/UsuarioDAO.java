@@ -8,17 +8,17 @@ import filters.UsuarioFilter;
 
 
 public interface UsuarioDAO {
-	void save(Usuario obj) throws PersistenciaDacException;
+	void save(Usuario obj) throws PersistenciaDacaException;
 
-	Usuario update(Usuario obj) throws PersistenciaDacException;
+	Usuario update(Usuario obj) throws PersistenciaDacaException;
 
-	void delete(Usuario obj) throws PersistenciaDacException;
+	void delete(Usuario obj) throws PersistenciaDacaException;
 
-	Usuario getByID(Integer objId) throws PersistenciaDacException;
+	Usuario getByID(Integer objId) throws PersistenciaDacaException;
 
-	List<Usuario> getAll() throws PersistenciaDacException;
+	List<Usuario> getAll() throws PersistenciaDacaException;
 
-	List<Usuario> findBy(UsuarioFilter filter) throws PersistenciaDacException;
+	List<Usuario> findBy(UsuarioFilter filter) throws PersistenciaDacaException;
 
 	boolean existeUsuarioComLogin(Usuario usuario);
 }

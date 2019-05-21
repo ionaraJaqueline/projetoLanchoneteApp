@@ -1,11 +1,33 @@
 package entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Pedido {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long codigo;
+	@Column(name="Qtd_Bebida")
 	private Integer qtdBebida;
+	
+	@Column(name="Qtd_Sobre_Mesa")
 	private Integer qtdSobreMesa;
+	
+	@Column(name="Qtd_Lanche")
 	private Integer qtdLanche;
+	
+	@Column(name="Valor_Unitario")
 	private Float valorUnitario;
+	
+	@Column(name="Valor_Total")
 	private Float valorTotal;
+	
+	@Column(name="Tipo_Pagamento")
 	private TipoDePagamento tipoDePagemento;
 
 	public Pedido() {
@@ -58,6 +80,14 @@ public class Pedido {
 
 	public void setTipoDePagemento(TipoDePagamento tipoDePagemento) {
 		this.tipoDePagemento = tipoDePagemento;
+	}
+
+	public Long getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(Long codigo) {
+		this.codigo = codigo;
 	}
 
 }

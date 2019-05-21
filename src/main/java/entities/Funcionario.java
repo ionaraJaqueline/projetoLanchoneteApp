@@ -1,8 +1,17 @@
 package entities;
 
-import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
 
+@Entity
 public class Funcionario extends Usuario {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	@Column(name="SALARIO")
 	private Float salario;
 
 	public Funcionario() {

@@ -7,7 +7,7 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 	
-<ui:composition template="/WEB-INF/templates/__commonLayout.xhtml">
+<ui:composition template="WEB-INF/templates/__commonLayout.xhtml">
 
 	<f:metadata>
 		<o:viewParam name="usuario" value="#{usuarioEdit.usuario}" />
@@ -22,7 +22,7 @@
 	
 		<h:form id="formEdit">
 
-			<ui:include src="/WEB-INF/templates/_campos_edit_usuario.xhtml" />	
+			<ui:include src="WEB-INF/templates/_campos_edit_usuario.xhtml" />	
 	
 			<p:panelGrid columns="2" styleClass="ui-noborder">
 				<p:commandButton id="botaoSubmeter" action="#{usuarioEdit.saveUsuario}" value="Submit" update="@form" icon="fa fa-save" />

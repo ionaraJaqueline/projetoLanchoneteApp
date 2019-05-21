@@ -5,7 +5,7 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 
-<ui:composition template="/WEB-INF/templates/__commonLayout.xhtml">
+<ui:composition template="WEB-INF/templates/__commonLayout.xhtml">
 
 	<!-- How to pass parameter to JSF 2.x template file: -->
 	<!-- https://www.mkyong.com/jsf2/how-to-pass-parameters-to-jsf-2-0-template-file/ -->
@@ -31,7 +31,7 @@
 					<p:inputText id="itSobreNomeFilter" value="#{manageUsuario.usuarioFilter.sobreNome}" label="SobreNome" style="width:350px" />
 
 					<p:outputLabel value="Inicio Data De Aniversario: "	for="itInicioDataDeAniversarioFilter" />
-					<ui:include src="/WEB-INF/templates/_date.xhtml">
+					<ui:include src="WEB-INF/templates/_date.xhtml">
 						<ui:param name="id" value="itInicioDataDeAniversarioFilter" />
 						<ui:param name="value" value="#{manageUsuario.usuarioFilter.inicioDataDeAniversario}" />
 						<ui:param name="label" value="Inicio Data De Aniversario" />
@@ -39,7 +39,7 @@
 					</ui:include>
 
 					<p:outputLabel value="Fim Data De Aniversario: " for="itFimDataDeAniversarioFilter" />
-					<ui:include src="/WEB-INF/templates/_date.xhtml">
+					<ui:include src="WEB-INF/templates/_date.xhtml">
 						<ui:param name="id" value="itFimDataDeAniversarioFilter" />
 						<ui:param name="value" value="#{manageUsuario.usuarioFilter.fimDataDeAniversario}" />
 						<ui:param name="label" value="Fim Data De Aniversario" />

@@ -1,9 +1,25 @@
 package entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Endereco {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long codigo;
+	
+	@Column(name="Rua")
 	private String rua;
+	@Column(name="Numero")
 	private Integer numero;
+	@Column(name="Bairro")
 	private String bairro;
+	@Column(name="Cep")
 	private Float cep;
 
 	public Endereco() {
@@ -49,6 +65,16 @@ public class Endereco {
 
 	public void setCep(Float cep) {
 		this.cep = cep;
+	}
+
+
+	public Long getCodigo() {
+		return codigo;
+	}
+
+
+	public void setCodigo(Long codigo) {
+		this.codigo = codigo;
 	}
 
 	
