@@ -10,7 +10,7 @@ import javax.persistence.Id;
 public class Lanche {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private Long codigo;
 	@Column(name="Nome")
 	private String nome;

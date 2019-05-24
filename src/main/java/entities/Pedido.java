@@ -10,7 +10,7 @@ import javax.persistence.Id;
 public class Pedido {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private Long codigo;
 	@Column(name="Qtd_Bebida")
 	private Integer qtdBebida;

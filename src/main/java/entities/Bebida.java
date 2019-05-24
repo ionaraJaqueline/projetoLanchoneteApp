@@ -10,7 +10,7 @@ import javax.persistence.Id;
 public class Bebida {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private Long codigo;
 	
 	@Column(name="Nome")

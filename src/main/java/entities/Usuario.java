@@ -10,13 +10,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name="TB_USUARIO")
 public class Usuario implements Serializable, Identificavel{
 	
 	/**
@@ -48,9 +47,11 @@ public class Usuario implements Serializable, Identificavel{
 	private String password;
 	
 	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="Usuario_Contato")
 	private Contato contato;
 	
 	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="Usuario_Endereco")
 	private Endereco endereco;
 
 	public Usuario() {

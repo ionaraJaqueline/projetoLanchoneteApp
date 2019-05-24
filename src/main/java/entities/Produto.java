@@ -13,7 +13,7 @@ import javax.persistence.TemporalType;
 public class Produto {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private Long codigo;
 	@Column(name="Nome")
 	private String nome;

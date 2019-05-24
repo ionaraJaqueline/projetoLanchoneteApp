@@ -5,20 +5,26 @@
 	
 	<persistence-unit name="lanchonete" transaction-type="RESOURCE_LOCAL">
 	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-	
-	
+		
+		<class>entities.Usuario</class>
+		<class>entities.Bebida</class>
+		<class>entities.Mesa</class>
+		<class>entities.Produto</class>
+		<class>entities.Lanche</class>
+		<class>entities.Comanda</class>
+		<class>entities.Contato</class>
+		<class>entities.Endereco</class>
 		<properties>
-			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
- 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/lanchonete" ></property>
-	 		<property name="javax.persistence.jdbc.user" value="postgres" />
- 			<property name="javax.persistence.jdbc.password" value="postgres" />
- 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+ 			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/lanchonete" ></property>
+			<property name="hibernate.connection.driver" value="org.postgresql.Driver" />
+	 		<property name="hibernate.connection.username" value="postgres" />
+ 			<property name="hibernate.connection.password" value="postgres" />
 			<property name="hibernate.default_schema" value="lanchonete" />
-			<property name="hibernate.hbm2ddl.auto" value="update" />
+ 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
 			<property name="hibernate.use_sql_comments" value="true" />
-			
 			
 			
 			<!-- Configuração do Pool de conexões -->

@@ -8,7 +8,7 @@ import javax.persistence.Id;
 public class Mesa {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private Long codigo;
 	@Column(name="Numero")
 	private Integer numero;

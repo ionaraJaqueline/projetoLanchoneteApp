@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class SobreMesa {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private Integer codigo;
 	@Column(name="Nome")
 	private String nome;
